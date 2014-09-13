@@ -5,27 +5,11 @@ Couchpotato provider
 
 How-to install
 ===========
+Make an folder named filelist at your customs_plugin folder and place the __init__.py and main.py file inside
 
- Download the Filelist.ro search provider
-https://github.com/outkastm/Filelist.ro/archive/master.zip and extract it somewhere.
-
-Shut down CouchPotatoServer, either by opening it up in a browser 
-and going to "settings" -> "shutdown", or by terminating the process
-
- Open your CouchPotatoServer folder and traverse into the following directory
-cd [pathtocouchpotato]/.couchpotato/couchpotato/core/media/_base/providers/torrent
-From the extracted folder, put _filelist.py in this directory.
-
- Now traverse into the following directory
-cd [pathtocouchpotato]/.couchpotato/couchpotato/core/media/movie/providers/torrent
-From the extracted folder, put filelist.py in this directory.
-
- Startup CouchPotatoServer
+Your custom_plugin folder, which is located within your config folder. See Settings->About->Directories (second folder is your config folder) for location
 
 How-to use
 ==========
-
 Once installed as above, go about activating the provider as you would with any other provider in CouchPotato
 
-Info
-# If you upgrade Couchpotato, check that after the upgrade this files are still there.
