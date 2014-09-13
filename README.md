@@ -1,7 +1,7 @@
 Filelist.ro
 ===========
 
-Couchpotato provider
+Couchpotato provider 2.4
 
 How-to install
 ===========
