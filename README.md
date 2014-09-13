@@ -5,6 +5,7 @@ Couchpotato provider
 
 How-to install
 ===========
+
 # Download the Filelist.ro search provider
 https://github.com/outkastm/Filelist.ro/archive/master.zip and extract it somewhere.
 
