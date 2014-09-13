@@ -26,5 +26,6 @@ How-to use
 ==========
 
 Once installed as above, go about activating the provider as you would with any other provider in CouchPotato
+
 Info
 If you upgrade Couchpotato, check that after the upgrade this files are still there.
