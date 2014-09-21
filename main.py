@@ -75,6 +75,6 @@ class Base(TorrentProvider):
 
 		
     def loginSuccess(self, output):
-        return 'logout.php?id=428896' in output.lower()
+        return 'logout.php' in output.lower()
 
     loginCheckSuccess = loginSuccess
