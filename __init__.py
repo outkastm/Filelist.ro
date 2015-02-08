@@ -12,9 +12,9 @@ class Filelist(MovieProvider, Base):
         ([25], ['3d']),
         ([19], ['720p', '1080p']),
         ([3], ['dvdr']),
-        ([1], ['brrip', 'dvdrip']),
+        ([1], ['brrip', 'dvdrip', 'scr', 'r5', 'tc', 'ts', 'cam']),
     ]
-    cat_backup_id = 0
+    cat_backup_id = 1
 
     def buildUrl(self, title, media, quality):
         query = tryUrlencode({
