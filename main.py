@@ -63,10 +63,10 @@ class Base(TorrentProvider):
                     })
 
             except:
-                log.error('Failed getting results from %s: %s', (self.getName(), traceback.format_exc()))
+                log.error('Failed getting results from %s: %s' % (self.getName(), traceback.format_exc()))
 
     def getLoginParams(self):
-        log.info('Logging in to filelist.ro with user [%s] and password [%s]', (self.conf('username'), self.conf('password')))
+        log.info('Logging in to filelist.ro with user [%s] and password [%s]' % (self.conf('username'), self.conf('password')))
         return {
             'username': self.conf('username'),
             'password': self.conf('password'),
