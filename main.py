@@ -11,11 +11,11 @@ log = CPLog(__name__)
 class Base(TorrentProvider):
 
     urls = {
-        'test': 'http://filelist.ro/',
-        'login': 'http://filelist.ro/takelogin.php',
-        'login_check': 'http://filelist.ro/my.php',
-        'search': 'http://filelist.ro/browse.php?%s',
-        'baseurl': 'http://filelist.ro/%s',
+        'test': 'https://filelist.ro/',
+        'login': 'https://filelist.ro/takelogin.php',
+        'login_check': 'https://filelist.ro/my.php',
+        'search': 'https://filelist.ro/browse.php?%s',
+        'baseurl': 'https://filelist.ro/%s',
     }
 
     http_time_between_calls = 1  # Seconds
