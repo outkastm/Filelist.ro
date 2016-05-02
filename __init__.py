@@ -33,7 +33,7 @@ config = [{
             'tab': 'searcher',
             'list': 'torrent_providers',
             'name': 'Filelist',
-            'description': 'See <a href="http://filelist.ro">Filelist</a>',
+            'description': 'See <a href="https://filelist.ro">Filelist</a>',
             'wizard': True,
             'options': [
                 {
