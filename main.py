@@ -39,7 +39,7 @@ class Base(TorrentProvider):
                     all_cells = result.find_all('div')
 
                     torrent = all_cells[1].find('a')
-                    download = all_cells[2].find('a')
+                    download = all_cells[3].find('a')
 
                     torrent_id = torrent['href']
                     torrent_id = torrent_id.replace('details.php?id=', '')
