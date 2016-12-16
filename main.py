@@ -74,6 +74,14 @@ class Filelist(MovieProvider, TorrentProvider):
 
                     torrent_name = torrent.getText()
 
+                    try:
+                        added_date_tuple = time.strptime(all_cells[5].getText(), '%H:%M:%S%d/%m/%Y')
+                        torrent_added = int(time.mktime(added_date_tuple))
+                    except (ValueError, TypeError):
+                        log.error('Unable to convert datetime from %s: %s', (self.getName(), traceback.format_exc()))
+                        torrent_added = 0
+                    torrent_age_in_days = int((time.time() - torrent_added) / 86400)
+
                     torrent_size = self.parseSize(all_cells[6].getText())
                     torrent_seeders = tryInt(all_cells[8].getText())
                     torrent_leechers = tryInt(all_cells[9].getText())
@@ -89,6 +97,8 @@ class Filelist(MovieProvider, TorrentProvider):
                         'url': torrent_url,
                         'detail_url': torrent_detail_url,
                         'score': torrent_score,
+                        'date': torrent_added,
+                        'age': torrent_age_in_days,
                     })
 
             except:
