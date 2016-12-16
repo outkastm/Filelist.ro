@@ -63,6 +63,22 @@ config = [{
                     'type': 'int',
                     'default': 20,
                     'description': 'Starting score for each release found via this provider.',
+                },
+                {
+                    'name': 'freeleech_score',
+                    'advanced': True,
+                    'label': 'Freeleech Extra',
+                    'type': 'int',
+                    'default': 0,
+                    'description': 'Favours [FreeLeech] releases by giving them extra score eg. 100'
+                },
+                {
+                    'name': 'freeleech_only',
+                    'advanced': True,
+                    'label': 'Freeleech Only',
+                    'default': False,
+                    'type': 'bool',
+                    'description': 'Only search for [FreeLeech] torrents.',
                 }
             ],
         },

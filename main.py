@@ -62,6 +62,13 @@ class Filelist(MovieProvider, TorrentProvider):
                     torrent = all_cells[1].find('a')
                     download = all_cells[3].find('a')
 
+                    freeleech = all_cells[1].find("img", {"alt": "FreeLeech"}) is not None
+                    torrent_score = 0
+                    if freeleech:
+                        torrent_score += self.conf('freeleech_score')
+                    elif self.conf('freeleech_only'):
+                        continue
+
                     torrent_id = torrent['href']
                     torrent_id = torrent_id.replace('details.php?id=', '')
 
@@ -81,6 +88,7 @@ class Filelist(MovieProvider, TorrentProvider):
                         'leechers': torrent_leechers,
                         'url': torrent_url,
                         'detail_url': torrent_detail_url,
+                        'score': torrent_score,
                     })
 
             except:
