@@ -1,27 +1,8 @@
-from couchpotato.core.helpers.encoding import tryUrlencode
-from .main import Base
-from couchpotato.core.media.movie.providers.base import MovieProvider
+from .main import Filelist
 
 
 def autoload():
     return Filelist()
-
-
-class Filelist(MovieProvider, Base):
-    cat_ids = [
-        ([25], ['3d']),
-        ([19], ['720p', '1080p']),
-        ([3], ['dvdr']),
-        ([1], ['brrip', 'dvdrip', 'scr', 'r5', 'tc', 'ts', 'cam']),
-    ]
-    cat_backup_id = 1
-
-    def buildUrl(self, title, media, quality):
-        query = tryUrlencode({
-            'search': '"%s" %s' % (title, media['info']['year']),
-            'cat': self.getCatId(quality)[0],
-        })
-        return query	
 
 
 config = [{
