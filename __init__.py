@@ -1,31 +1,10 @@
-from couchpotato.core.helpers.encoding import tryUrlencode
-from .main import Base
-from couchpotato.core.media.movie.providers.base import MovieProvider
+from .main import Filelist
 
 
 def autoload():
     return Filelist()
 
 
-class Filelist(MovieProvider, Base):
-    cat_ids = [
-        ([25], ['3d']),
-        ([19], ['720p', '1080p']),
-        ([3], ['dvdr']),
-        ([1], ['brrip', 'dvdrip', 'scr', 'r5', 'tc', 'ts', 'cam']),
-    ]
-    cat_backup_id = 1
-
-    def buildUrl(self, title, media, quality):
-        query = tryUrlencode({
-            'search': '"%s" %s' % (title, media['info']['year']),
-            'cat': self.getCatId(quality)[0],
-        })
-        return query	
-	
-
-	
-	
 config = [{
     'name': 'filelist',
     'groups': [
@@ -35,6 +14,19 @@ config = [{
             'name': 'Filelist',
             'description': 'See <a href="https://filelist.ro">Filelist</a>',
             'wizard': True,
+            'icon': ('AAABAAEAEBAAAAEAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAClhCylhCylhCylh'
+                     'CylhCylhCylhCylhCylhCylhCylhCylhCylhCylhCylhCylhCylhCwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLS'
+                     'wvLSwvLSwvLSylhCylhCwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSylhCylhCwvLSwvLSwvLSw'
+                     'vLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSylhCylhCwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwv'
+                     'LSwvLSwvLSylhCylhCwvLSwvLSwvLSzVoh8vLSwvLSwvLSwvLSzVoh/Voh/Voh/Voh8vLSwvLSylhCylhCwvLSwvLSyeeyPVo'
+                     'h8vLSwvLSwvLSyeeyPVoh8vLSwvLSwvLSwvLSwvLSylhCylhCwvLSwvLSx8ZCbVoh/Voh/Voh9bTCl8ZCbVoh8vLSwvLSwvLS'
+                     'wvLSwvLSylhCylhCwvLSwvLSxbTCnVoh8vLSwvLSwvLSx8ZCbVoh8vLSwvLSwvLSwvLSwvLSylhCylhCwvLSwvLSxbTCnVoh8'
+                     'vLSwvLSwvLSxbTCnVoh8vLSwvLSwvLSwvLSwvLSylhCylhCwvLSwvLSxbTCnVoh/Voh/Voh/Voh9bTCnVoh8vLSwvLSwvLSwv'
+                     'LSwvLSylhCylhCwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSylhCylhCwvLSwvLSwvLSwvLSwvL'
+                     'SwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSylhCylhCwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLS'
+                     'wvLSylhCylhCwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSylhCylhCylhCylhCylhCylhCylhCy'
+                     'lhCylhCylhCylhCylhCylhCylhCylhCylhCylhCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+                     'AAAAAAAAAAAAAAAAAAAAAAAAAAAA'),
             'options': [
                 {
                     'name': 'enabled',
@@ -71,6 +63,22 @@ config = [{
                     'type': 'int',
                     'default': 20,
                     'description': 'Starting score for each release found via this provider.',
+                },
+                {
+                    'name': 'freeleech_score',
+                    'advanced': True,
+                    'label': 'Freeleech Extra',
+                    'type': 'int',
+                    'default': 0,
+                    'description': 'Favours [FreeLeech] releases by giving them extra score eg. 100'
+                },
+                {
+                    'name': 'freeleech_only',
+                    'advanced': True,
+                    'label': 'Freeleech Only',
+                    'default': False,
+                    'type': 'bool',
+                    'description': 'Only search for [FreeLeech] torrents.',
                 }
             ],
         },
