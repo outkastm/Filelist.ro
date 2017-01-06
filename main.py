@@ -72,7 +72,7 @@ class Filelist(MovieProvider, TorrentProvider):
                     torrent_id = torrent['href']
                     torrent_id = torrent_id.replace('details.php?id=', '')
 
-                    torrent_name = torrent.getText()
+                    torrent_name = torrent['title']
 
                     try:
                         added_date_tuple = time.strptime(all_cells[5].getText(), '%H:%M:%S%d/%m/%Y')
