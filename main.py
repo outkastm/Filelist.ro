@@ -36,6 +36,7 @@ class Filelist(MovieProvider, TorrentProvider):
         return tryUrlencode({
             'search': '"%s" %s' % (title, media['info']['year']),
             'cat': cat_id,
+            'searchin': 1,
         })
 
     def _searchOnTitle(self, title, movie, quality, results):
@@ -72,7 +73,7 @@ class Filelist(MovieProvider, TorrentProvider):
                     torrent_id = torrent['href']
                     torrent_id = torrent_id.replace('details.php?id=', '')
 
-                    torrent_name = torrent['title']
+                    torrent_name = torrent.getText()
 
                     try:
                         added_date_tuple = time.strptime(all_cells[5].getText(), '%H:%M:%S%d/%m/%Y')
