@@ -25,10 +25,10 @@ class Filelist(MovieProvider, TorrentProvider):
     cat_ids = [
         ([25], ['3d']),
         ([20], ['bd50']),
-        ([19, 4], ['720p', '1080p', '2160p']),
-        ([19, 4, 1], ['brrip']),
-        ([3, 19, 2, 4], ['dvdr']),
-        ([1], ['dvdrip', 'scr', 'r5', 'tc', 'ts', 'cam']),
+        ([19, 4], ['720p', '1080p']),
+        ([6], ['2160p']),
+        ([3, 2], ['dvdr']),
+        ([1], [['brrip', 'dvdrip', 'scr', 'r5', 'tc', 'ts', 'cam']),
     ]
     cat_backup_id = 0
 
