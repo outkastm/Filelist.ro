@@ -28,7 +28,7 @@ class Filelist(MovieProvider, TorrentProvider):
         ([19, 4], ['720p', '1080p']),
         ([6], ['2160p']),
         ([3, 2], ['dvdr']),
-        ([1], [['brrip', 'dvdrip', 'scr', 'r5', 'tc', 'ts', 'cam']),
+        ([1], ['brrip', 'dvdrip', 'scr', 'r5', 'tc', 'ts', 'cam']),
     ]
     cat_backup_id = 0
 
