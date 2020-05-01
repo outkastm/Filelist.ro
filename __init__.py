@@ -12,7 +12,7 @@ config = [{
             'tab': 'searcher',
             'list': 'torrent_providers',
             'name': 'Filelist',
-            'description': 'See <a href="https://filelist.ro">Filelist</a>',
+            'description': 'See <a href="https://filelist.io">Filelist</a>',
             'wizard': True,
             'icon': ('AAABAAEAEBAAAAEAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAClhCylhCylhCylh'
                      'CylhCylhCylhCylhCylhCylhCylhCylhCylhCylhCylhCylhCylhCwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLSwvLS'

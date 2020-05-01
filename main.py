@@ -14,10 +14,10 @@ log = CPLog(__name__)
 class Filelist(MovieProvider, TorrentProvider):
 
     urls = {
-        'test': 'https://filelist.ro/',
-        'search': 'https://filelist.ro/api.php?%s',
-        'detail': 'https://filelist.ro/detail.php?id=%s',
-        'download': 'https://filelist.ro/download.php?id=%s&passkey=%s',
+        'test': 'https://filelist.io/',
+        'search': 'https://filelist.io/api.php?%s',
+        'detail': 'https://filelist.io/detail.php?id=%s',
+        'download': 'https://filelist.io/download.php?id=%s&passkey=%s',
     }
 
     http_time_between_calls = 1  # Seconds
